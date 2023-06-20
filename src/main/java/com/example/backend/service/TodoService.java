@@ -12,11 +12,7 @@ import java.util.NoSuchElementException;
 @RequiredArgsConstructor
 public class TodoService {
 
-    private TodoRepo todoRepo;
-
-    public TodoService(TodoRepo todoRepo) {
-        this.todoRepo = todoRepo;
-    }
+    private final TodoRepo todoRepo;
 
     public Todo addTodo(Todo todo) {
         return todoRepo.addTodo(todo);

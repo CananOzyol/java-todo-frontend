@@ -13,10 +13,6 @@ public class TodoRepo {
     private List<Todo> toodList = new ArrayList<>();
 
     // warum
-    public TodoRepo() {
-        Todo todo1 = new Todo("To do 1", (Status.valueOf("OPEN")), "100");
-        toodList.add(todo1);
-    }
 
     public Todo addTodo(Todo todo) {
         toodList.add(todo);

@@ -28,17 +28,19 @@ class IntegrationTests {
         // GIVEN
         todoRepo.addTodo(new Todo("To do 1", (Status.valueOf("OPEN")), "101"));
         String expected = """
+                    [
                     {
                         "description": "To do 1",
                         "status": "OPEN",
                         "id": "101"
-                    }           
-                          """;
+                    }  
+                    ]        
+                    """;
         // WHEN
         Mvc.perform(MockMvcRequestBuilders.get("/api/todo"))
-        // THEN
-        .andExpect(MockMvcResultMatchers.status().is(200))
-        .andExpect(MockMvcResultMatchers.content().json(expected));
+                // THEN
+                .andExpect(MockMvcResultMatchers.status().is(200))
+                .andExpect(MockMvcResultMatchers.content().json(expected));
     }
 
 }
